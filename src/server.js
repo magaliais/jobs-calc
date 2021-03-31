@@ -1,9 +1,15 @@
-const express = require("express");  // biblioteca para criação do servidor
+// biblioteca para criação do servidor
+const express = require("express");
 const server = express();
-const routes = require("./routes");  // parte do express responsável por criar as rotas
+
+// parte do express responsável por criar as rotas
+const routes = require("./routes");
 
 // habilitando o uso do ejs (template engine)
 server.set('view engine', 'ejs');
+
+// habilitando uso do req.body (body da requisição) para a configuração das rotas post
+server.use(express.urlencoded({ extended: true }));
 
 // habilitar arquivos estáticos
 server.use(express.static("public"));
@@ -11,4 +17,5 @@ server.use(express.static("public"));
 // routes
 server.use(routes);
 
-server.listen(3000, () => console.log('rodando'));
+// abre a porta 3000
+server.listen(3000);
