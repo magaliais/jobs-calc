@@ -61,7 +61,7 @@
               Encerrados
             </div>
           </div>
-          <a class="button orange" href="/job">
+          <a class="button orange" href="/job"> 
             <span>
               <img src="/images/plus-24.svg" alt="Novo Job" /> 
             </span>
@@ -87,7 +87,7 @@
               </div>
               <div class="deadline column">
                 <span>Prazo</span>
-                <p><%= job.remaining <= 0 ? 0 : job.remaining %>  dias para a entrega</p>
+                <p><%= job.remaining <= 0 ? "Prazo encerrado" : `${job.remaining} dias para a entrega` %> </p>
               </div>
               <div class="amount column">
                 <span>Valor</span>
@@ -99,7 +99,7 @@
               <div class="actions column flex">
                 <p class="sr-only">Ações</p>
                 <a 
-                  href="/job/edit" 
+                  href="/job/<%= job.id %> " 
                   class="button white edit" 
                   title="Editar Job">
                   <img src="/images/edit-24.svg" alt="Editar Job" />
@@ -127,7 +127,7 @@
         <h3>Excluir Job</h3>
         <p>Quer mesmo excluir esse job? <br/>
         Ele será apagado para sempre.  
-        <p>
+        </p>
         <footer>
           <a 
             class="button gray" 
