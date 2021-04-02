@@ -4,26 +4,6 @@ const JobUtils = require('../utils/JobUtils.js');
 const Profile = require('../model/Profile.js');
 
 module.exports = {
-  index(req, res) {
-
-    // atualiza o array toda vez que entra na página
-    
-    const updatedJobs = Job.get().map((job) => {
-      // ajusta os jobs e calculando tempo restante
-      const remaining = JobUtils.remainingDays(job);
-      const status = remaining <= 0 ? 'done' : 'progress';
-    
-      return {
-         ...job,
-        remaining,
-        status,
-        budget: JobUtils.calculateBudget(job, Profile.get()["hour-value"])
-      };
-    })
-    
-    return res.render('index', { jobs: updatedJobs }); // res.render(página a ser renderizada, { objeto passado para dentro do ejs })
-  },
-
   create(req, res) {
     return res.render("job");
   },
