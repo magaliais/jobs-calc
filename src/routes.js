@@ -4,10 +4,11 @@ const routes = express.Router();
 // import do controller
 const ProfileController = require('./controllers/ProfileController.js');
 const JobController = require('./controllers/JobController.js');
+const DashboardController = require("./controllers/DashboardController.js");
 
 // request, response
 // rotas get
-routes.get('/', JobController.index);
+routes.get('/', DashboardController.index);
 routes.get('/job', JobController.create);
 routes.get('/job/:id', JobController.show); // determina que vá para o id do job selecionado
 routes.get('/profile', ProfileController.index);
