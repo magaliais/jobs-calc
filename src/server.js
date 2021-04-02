@@ -1,9 +1,13 @@
 // biblioteca para criação do servidor
 const express = require("express");
 const server = express();
-
-// parte do express responsável por criar as rotas
+// importa módulo do express responsável por criar e manipular as rotas
 const routes = require("./routes");
+// importa módulo que fornece utilidades para trabalhar com paths dos diretórios
+const path = require("path");
+
+// mudar a localização da pasta views
+server.set('views', path.join(__dirname, 'views'));
 
 // habilitando o uso do ejs (template engine)
 server.set('view engine', 'ejs');
