@@ -15,6 +15,10 @@ form fieldset legend {
   line-height: 2.625rem;
 }
 
+.input-wrapper {
+  width: 50%;
+}
+
 fieldset .separator {
   margin-bottom: 2rem;
 }
