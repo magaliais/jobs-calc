@@ -15,7 +15,7 @@ module.exports = {
     job.createdAt = Date.now(); // atribuindo a data atual ao objeto 'job'
     job.id = Job.get()[Job.get().length -1]?.id + 1 || 1;
 
-    Job.get().push(job);
+    Job.create(job);
     return res.redirect('/');
   },
 
