@@ -11,5 +11,5 @@ module.exports = () =>
   });
 
 
-// quando uma arrow function tem somente um erro
+// quando uma arrow function tem somente um elemento
 // ocultamos sua chave
