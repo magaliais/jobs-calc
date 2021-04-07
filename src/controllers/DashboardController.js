@@ -3,9 +3,10 @@ const JobUtils = require('../utils/JobUtils.js')
 const Profile = require('../model/Profile.js');
 
 module.exports = {
-  index(req, res) {
-
+  async index(req, res) {
     // atualiza o array toda vez que entra na página
+
+    const profile = await Profile.get();
     
     // define o estado de cada projeto
     let statusCounts = {
@@ -35,15 +36,15 @@ module.exports = {
          ...job,
         remaining,
         status,
-        budget: JobUtils.calculateBudget(job, Profile.get()["hour-value"])
+        budget: JobUtils.calculateBudget(job, profile["hour-value"])
       };
     })
 
     // qtd de horas que quero trabalhar por dia 
     // MENOS
     // quantidade de hotas/dia de cada job EM PROGRESSO
-    const freeHours = Profile.get()['hours-per-day'] - jobTotalHours;
+    const freeHours = profile['hours-per-day'] - jobTotalHours;
     
-    return res.render('index', { jobs: updatedJobs, profile: Profile.get(), statusCount: statusCounts, freeHours: freeHours }); // res.render(página a ser renderizada, { objeto passado para dentro do ejs })
+    return res.render('index', { jobs: updatedJobs, profile: profile, statusCount: statusCounts, freeHours: freeHours }); // res.render(página a ser renderizada, { objeto passado para dentro do ejs })
   }
 }
