@@ -7,17 +7,18 @@ module.exports = {
     // atualiza o array toda vez que entra na página
 
     const profile = await Profile.get();
+    const jobs = await Job.get();
     
     // define o estado de cada projeto
     let statusCounts = {
       progress: 0,
       done: 0,
-      total: Job.get().length
+      total: jobs.length
     }
     
     let jobTotalHours = 0;
 
-    const updatedJobs = Job.get().map((job) => {
+    const updatedJobs = jobs.map((job) => {
       // ajusta os jobs e calculando tempo restante
       const remaining = JobUtils.remainingDays(job);
       const status = remaining <= 0 ? 'done' : 'progress';
