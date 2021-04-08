@@ -44,14 +44,16 @@ const initDb = {
           monthly_budget, 
           days_per_week, 
           hours_per_day, 
-          vacation_per_year
+          vacation_per_year, 
+          hour_value
         ) VALUES (
-          "Gabriel", 
-          "https://github.com/magaliais.png", 
+          " ", 
+          "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png", 
           3000, 
           5, 
-          5, 
-          4
+          8, 
+          4, 
+          70
         )
     `);
 
