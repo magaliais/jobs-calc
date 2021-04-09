@@ -9,6 +9,7 @@ const DashboardController = require("./controllers/DashboardController.js");
 // request, response
 // rotas get
 routes.get('/', DashboardController.index);
+routes.get('/landing-page', (req, res) => res.render('../../landing-page'));
 routes.get('/job', JobController.create);
 routes.get('/job/:id', JobController.show); // determina que vá para o id do job selecionado
 routes.get('/profile', ProfileController.index);
