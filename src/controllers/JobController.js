@@ -15,7 +15,7 @@ module.exports = {
     job.createdAt = Date.now(); // atribuindo a data atual ao objeto 'job'
 
     await Job.create(job);
-    return res.redirect('/');
+    return res.redirect('/index');
   },
 
   async show(req, res) {
@@ -54,6 +54,6 @@ module.exports = {
 
     await Job.delete(jobId);
   
-    return res.redirect('/');
+    return res.redirect('/index');
   }
 }
