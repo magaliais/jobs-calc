@@ -1,0 +1,130 @@
+:root {
+
+  --secondary: #F1972C;
+  --background: #A3A3A6;
+  --form-bg: #41414C;
+  --white: #FBFCFE;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Inter;
+  color: var(--white);
+}
+
+body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100vh;
+
+  background-color: var(--background);
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background-color: var(--form-bg);
+  height: 75%;
+  width: 60%;
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 1.5rem 3rem;
+
+  box-shadow: 0px 10px 15px 0 rgba(0,0,0,45%);
+}
+
+.container form {
+  display: grid;
+  grid-template-rows: 1fr 2fr 1fr;
+
+  height: 100%;
+}
+
+main .container form h1 {
+  align-self: center;
+  justify-self: left;
+  width: 80%;
+  font-size: 2rem;
+  font-weight: 200;
+}
+
+main .container form .inputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+main .container form .inputs .input-field {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+main .container form .inputs .input-field:first-child {
+  margin-bottom: 2rem;
+}
+
+main .container form .inputs .input-field label {
+  margin-bottom: 1rem;
+}
+
+main .container form .inputs .input-field input {
+  height: 3rem;
+  color: var(--form-bg);
+  outline: transparent;
+  border-radius: 10px;
+  padding: 0 1rem;
+  font-size: 1rem;
+  border: none;
+}
+
+main .container form .buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+main .container form button {
+  height: 50px;
+  width: 100px;
+  font-weight: 200;
+  font-size: large;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.1s ease-in-out;
+}
+
+main .container form button:hover {
+  transform: scale(1.1, 1.1);
+}
+
+main .container form #sign-in {
+  background-color: var(--secondary);
+}
+
+main .container form #sign-up {
+  background-color: var(--background);
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section img {
+  width: 90%;
+}
