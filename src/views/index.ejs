@@ -89,6 +89,17 @@
               <div class="name column">
                 <%= job.name %>
               </div>
+              <div class="description column">
+                <img src="/images/description.svg" alt="descrição">
+                <div class="message">
+                  <% if(job.description == '') { %>
+                      <p>Não há descrição disponível para esse job.</p> 
+                  <% } else { %>
+                      <p><%=job.description%></p>
+                  <% } %> 
+                  
+                </div>
+              </div>
               <div class="deadline column">
                 <span>Prazo</span>
                 <p><%= job.remaining <= 0 ? "Prazo encerrado" : `${job.remaining} dias para a entrega` %> </p>
