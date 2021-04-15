@@ -31,6 +31,7 @@ const initDb = {
         name TEXT, 
         daily_hours INT, 
         total_hours INT, 
+        description TEXT, 
         created_at DATETIME
       )
     `)
