@@ -14,6 +14,7 @@ module.exports = {
         name: job.name, 
         "daily-hours": job.daily_hours, 
         "total-hours": job.total_hours, 
+        "description": job.description,
         createdAt: job.created_at,
       }
     });
@@ -26,7 +27,8 @@ module.exports = {
       UPDATE jobs SET
         name = "${updatedJob.name}", 
         daily_hours = ${updatedJob["daily-hours"]}, 
-        total_hours = ${updatedJob["total-hours"]}
+        total_hours = ${updatedJob["total-hours"]}, 
+        description = "${updatedJob.description}"
         WHERE id = ${jobId}
     `);
 
@@ -50,11 +52,13 @@ module.exports = {
         name, 
         daily_hours, 
         total_hours, 
+        description, 
         created_at
       ) VALUES (
         "${newJob.name}", 
         ${newJob["daily-hours"]}, 
         ${newJob["total-hours"]}, 
+        "${newJob.description}", 
         ${newJob["createdAt"]}
       )
     `);
