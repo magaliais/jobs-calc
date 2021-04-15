@@ -154,7 +154,7 @@ main {
 /* -------------------------------------------------- */
 .card {
   display: grid;
-  grid-template-columns: 5% 35% 20% 15% 15% 10%;
+  grid-template-columns: 5% 15% 15% 20% 15% 15% 10%;
   align-items: center;
 
   margin-bottom:  0.5rem;
@@ -188,6 +188,40 @@ main {
 
 .card:hover::before {
   height:100%;
+}
+
+.card .description img {
+  position: relative;
+  width: 20px;
+  align-self: flex-end;
+  flex: 1;
+}
+
+.card .description .message {
+  position: absolute;
+  top: 65px;
+  display: none;
+
+  max-width: 200px;
+  padding: 1rem;
+  z-index: 1;
+
+  text-align: center;
+  line-height: 1.5rem;
+
+  background: #F99C2D;
+  opacity: 0.9;
+  color: #000;
+  border-radius: 5px;
+  border: 2px solid black;
+}
+
+.card .description img:hover {
+  transform: scale(1.2);
+}
+
+.card .description img:hover ~ .message {
+  display: block;
 }
 
 .card .column:last-child {
@@ -229,13 +263,13 @@ main {
 
 @media(max-width:1390px) {
   .card {
-    grid-template-columns: 5% 30% 20% 15% 17.25% 12.25%;
+    grid-template-columns: 5% 15% 15% 20% 15% 17.25% 12.25%;
   }
 }
 
 @media(max-width:970px) {
   .card {
-    grid-template-columns: 31% 23% 13% 20.25% 12.25%;
+    grid-template-columns: 15% 16% 23% 13% 20.25% 12.25%;
   }
   
   .column.id {

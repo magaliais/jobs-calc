@@ -42,7 +42,7 @@ label {
   margin-bottom: 1rem;
 }
 
-input {
+input, textarea {
   font-family: IBM Plex Sans;
   font-weight: 500;
 
